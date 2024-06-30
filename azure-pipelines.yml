@@ -17,5 +17,16 @@ steps:
 
 - script: |
     npm install
-    npm run build
-  displayName: 'Cypress Allure Azure Integration'
+  displayName: 'NPM installation'
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'run test'
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'run allure:report'  
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    customCommand: 'run allure:open'

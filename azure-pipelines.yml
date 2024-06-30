@@ -17,7 +17,5 @@ steps:
 
 - script: |
     npm install
-    npm allure:clear
     npm run build
-    npm allure:report 
   displayName: 'Cypress Allure Azure Integration'
